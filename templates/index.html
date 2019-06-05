@@ -1,0 +1,137 @@
+<html>
+
+    <head>
+        <title>Rock-Paper-Scissors</title>
+    
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+       </script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+       </script>
+
+        <style>
+            #panel, .flip 
+            {
+                font-size: 16px;
+                padding: 10px;
+                text-align: center;
+                background-color: rgb(14, 174, 223);
+                color: white;
+                border: solid 1px rgb(14, 174, 237);
+                margin: auto;
+                height: 7%;
+                width: 95px;
+            }
+        
+            #panel
+            {
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="jumbotron" align="center">
+          <br><br><br>
+            <h1 align='center'>The Rock-Paper-Scissors Game</h1><hr color="black">
+            <button onclick=" window.open('/about')">Visit Our About Page </button>
+            <br><br>
+	          <h5 align='center'>This is the classic rock-paper-scissors game! Try your luck against the computer! B-} </h5><br><br>
+
+                <h6>0(zero) represents ROCK.<br>
+                1 represents SCISSORS.<br>
+                2 represents PAPER.<br>
+                Enter your choice in the box and click on Go to proceed.</h6><br><hr color="black">
+                <br>
+                <h3><i>So, what's it going to be? Rock? Paper? Or Scissors?</i></h3>
+                <br>
+                <form id='game'>
+                <input class="form-control col-1" type="number" id="choice">
+                <br>
+                <p class="flip" onclick="myFunction()"> Go </p><br>
+                
+                <div id="out">
+                        Your choice is: <p id='urch'></p><br>
+                        The computer's choice is: <p id='cc'></p><br><br>
+
+                        <p id='whowon'></p><br>
+
+                        <input type="reset" value="Retry" onclick="reset()">
+                </div>
+                <script>
+                    function myFunction() 
+                    {
+                      var z= Math.random();
+                      var ch = document.getElementById('choice').value;
+                      if(ch==0)
+                      {
+                        document.getElementById("urch").innerHTML = 'Rock';
+                      }
+                      else
+                      {
+                        if(ch==1)
+                        {
+                          document.getElementById("urch").innerHTML = 'Scissors';
+                        }
+                        else
+                        {
+                          document.getElementById("urch").innerHTML = 'Paper';
+                        }
+                      }
+                      if(z < 0.33)
+                      {
+                        document.getElementById("cc").innerHTML = 'Rock';
+                        z=0;
+                      }
+                      else
+                      {
+                          if(z < 0.66)
+                          {
+                            document.getElementById("cc").innerHTML = 'Scissors';
+                            z=1;
+                          }
+                          else
+                          {
+                            document.getElementById("cc").innerHTML = 'Paper';
+                            z=2;
+                          }
+                      }
+
+                      if(ch==z)
+                      {
+                        document.getElementById("whowon").innerHTML = 'Tie!';
+                      }
+                      else
+                      {
+                          if((z==0 && ch==2)|| (z==1 && ch==0) || (z==2 && ch==1))
+                          {
+                            document.getElementById("whowon").innerHTML = 'You Won!! :)';
+                          }
+                          else
+                          {
+                            document.getElementById("whowon").innerHTML = 'You Lost :(';
+                          }
+                      }
+                      document.getElementById("panel").style.display = "block";
+                    }
+                </script>
+            </form>
+<<<<<<< HEAD
+            <br>
+=======
+	    <br>
+>>>>>>> 7694cb7eb4e80939b6552120caa31be23e3318f9
+            <hr color="black">
+            <button onclick=" window.open('http://www.srmdsc.com','_blank')">Visit SRM DSC's website</button>
+        </div>
+      <b
+
+    </body>
+
+</html>
